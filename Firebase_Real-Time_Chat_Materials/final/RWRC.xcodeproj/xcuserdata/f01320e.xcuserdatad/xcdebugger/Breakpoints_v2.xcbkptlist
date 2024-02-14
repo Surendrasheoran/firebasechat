@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "9ED19205-6FB6-443F-B9DB-3391FF31BB9E"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2B74CAD7-DF12-4FA9-AFFA-4360B2C28231"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RWRC/Chat/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "310"
+            endingLineNumber = "310"
+            landmarkName = "uploadImage(_:to:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5F4DCD30-E1CD-43E9-881D-200F929323DD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RWRC/Chat/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "438"
+            endingLineNumber = "438"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3B9B4D58-0444-4E0E-ADB4-E4DF6EEBC713"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RWRC/Chat/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "316"
+            endingLineNumber = "316"
+            landmarkName = "uploadImage(_:to:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C209DC95-3E5C-4372-BA28-970DE43451A2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RWRC/Chat/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "427"
+            endingLineNumber = "427"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6D9A9282-7BD4-4B3A-A5EE-8AA44EC646A7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RWRC/Login/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "signIn()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6D9A9282-7BD4-4B3A-A5EE-8AA44EC646A7 - c0e97dbe969beb97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RWRC.LoginViewController.signIn() -&gt; ()"
+                  moduleName = "RWRC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/f01320e/Downloads/Firebase_Real-Time_Chat_Materials/final/RWRC/Login/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143"
+                  offsetFromSymbolStart = "1204">
+               </Location>
+               <Location
+                  uuid = "6D9A9282-7BD4-4B3A-A5EE-8AA44EC646A7 - b07c77ce671c3c47"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in RWRC.LoginViewController.signIn() -&gt; ()"
+                  moduleName = "RWRC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/f01320e/Downloads/Firebase_Real-Time_Chat_Materials/final/RWRC/Login/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "6D9A9282-7BD4-4B3A-A5EE-8AA44EC646A7 - b07c77ce671c3c64"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in RWRC.LoginViewController.signIn() -&gt; ()"
+                  moduleName = "RWRC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/f01320e/Downloads/Firebase_Real-Time_Chat_Materials/final/RWRC/Login/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "6D9A9282-7BD4-4B3A-A5EE-8AA44EC646A7 - c0e97dbe969beced"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RWRC.LoginViewController.signIn() -&gt; ()"
+                  moduleName = "RWRC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/f01320e/Downloads/Firebase_Real-Time_Chat_Materials/final/RWRC/Login/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "149"
+                  endingLineNumber = "149"
+                  offsetFromSymbolStart = "956">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A4153052-B006-4157-8430-A0742AF81CE6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RWRC/Login/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "signIn()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A4153052-B006-4157-8430-A0742AF81CE6 - c0e97dbe969beced"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RWRC.LoginViewController.signIn() -&gt; ()"
+                  moduleName = "RWRC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/f01320e/Downloads/Firebase_Real-Time_Chat_Materials/final/RWRC/Login/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "149"
+                  endingLineNumber = "149"
+                  offsetFromSymbolStart = "956">
+               </Location>
+               <Location
+                  uuid = "A4153052-B006-4157-8430-A0742AF81CE6 - b07c77ce671c3b1c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in RWRC.LoginViewController.signIn() -&gt; ()"
+                  moduleName = "RWRC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/f01320e/Downloads/Firebase_Real-Time_Chat_Materials/final/RWRC/Login/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "150"
+                  endingLineNumber = "150"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BBBB6949-6E39-4BEB-A8B0-31CDDF7F5FD1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RWRC/Login/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "actionButtonPressed()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8DA2FC53-8997-45E0-A80C-4F047294DF09"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RWRC/Login/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "textFieldDidReturn()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9F8B7CC7-ED32-46D1-B660-FF09ED6C85CC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RWRC/Channels/ChannelsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
+            landmarkName = "handleDocumentChange(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2D0AF1EF-2640-416B-9665-F266E7F31777"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RWRC/Chat/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
+            landmarkName = "uploadImage(_:to:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "970FE093-2943-470B-A185-3F44257E2DAD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RWRC/Chat/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "306"
+            endingLineNumber = "306"
+            landmarkName = "uploadImage(_:to:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DCBE8553-612D-4930-8DE6-64E53D92DA8A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RWRC/Chat/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "clearData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DCBE8553-612D-4930-8DE6-64E53D92DA8A - 3c936fb06176a6c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for RWRC.ChatViewController.clearData() async -&gt; ()"
+                  moduleName = "RWRC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/f01320e/Downloads/Firebase_Real-Time_Chat_Materials/final/RWRC/Chat/ChatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "161"
+                  endingLineNumber = "161"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "DCBE8553-612D-4930-8DE6-64E53D92DA8A - eac8d617eedcadca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in RWRC.ChatViewController.clearData() async -&gt; ()"
+                  moduleName = "RWRC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/f01320e/Downloads/Firebase_Real-Time_Chat_Materials/final/RWRC/Chat/ChatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "DCBE8553-612D-4930-8DE6-64E53D92DA8A - cd78fc6a431d70bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RWRC.ChatViewController.clearData() -&gt; ()"
+                  moduleName = "RWRC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/f01320e/Downloads/Firebase_Real-Time_Chat_Materials/final/RWRC/Chat/ChatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "161"
+                  endingLineNumber = "161"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "DCBE8553-612D-4930-8DE6-64E53D92DA8A - 3e69fb22dc8fb536"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in RWRC.ChatViewController.clearData() -&gt; ()"
+                  moduleName = "RWRC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/f01320e/Downloads/Firebase_Real-Time_Chat_Materials/final/RWRC/Chat/ChatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C4060D23-8598-448F-9C62-9E15B5457481"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RWRC/Chat/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "clearData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "145408A4-D811-4DCC-B653-721BC4F0B7B8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RWRC/Chat/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "listenToMessages()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E25F3FA6-151D-43E3-BDE0-E00CA446D845"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RWRC/Chat/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
+            landmarkName = "handleDocumentChange(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E25F3FA6-151D-43E3-BDE0-E00CA446D845 - df458fcc7635d146"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RWRC.ChatViewController.handleDocumentChange(__C.FIRDocumentChange) -&gt; ()"
+                  moduleName = "RWRC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/f01320e/Downloads/Firebase_Real-Time_Chat_Materials/final/RWRC/Chat/ChatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "260"
+                  endingLineNumber = "260"
+                  offsetFromSymbolStart = "384">
+               </Location>
+               <Location
+                  uuid = "E25F3FA6-151D-43E3-BDE0-E00CA446D845 - df458fcc7635d127"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RWRC.ChatViewController.handleDocumentChange(__C.FIRDocumentChange) -&gt; ()"
+                  moduleName = "RWRC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/f01320e/Downloads/Firebase_Real-Time_Chat_Materials/final/RWRC/Chat/ChatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "259"
+                  endingLineNumber = "259"
+                  offsetFromSymbolStart = "300">
+               </Location>
+               <Location
+                  uuid = "E25F3FA6-151D-43E3-BDE0-E00CA446D845 - ac9cb917c4487a33"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.UIImage&gt;) -&gt; () in RWRC.ChatViewController.handleDocumentChange(__C.FIRDocumentChange) -&gt; ()"
+                  moduleName = "RWRC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/f01320e/Downloads/Firebase_Real-Time_Chat_Materials/final/RWRC/Chat/ChatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "259"
+                  endingLineNumber = "259"
+                  offsetFromSymbolStart = "128">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4BBF5349-65C3-4DD2-885E-7422F102CBFD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RWRC/Chat/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
+            landmarkName = "handleDocumentChange(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4BBF5349-65C3-4DD2-885E-7422F102CBFD - ac9cb917c44865d6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.UIImage&gt;) -&gt; () in RWRC.ChatViewController.handleDocumentChange(__C.FIRDocumentChange) -&gt; ()"
+                  moduleName = "RWRC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/f01320e/Downloads/Firebase_Real-Time_Chat_Materials/final/RWRC/Chat/ChatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "264"
+                  endingLineNumber = "264"
+                  offsetFromSymbolStart = "256">
+               </Location>
+               <Location
+                  uuid = "4BBF5349-65C3-4DD2-885E-7422F102CBFD - df458fcc7635ce00"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RWRC.ChatViewController.handleDocumentChange(__C.FIRDocumentChange) -&gt; ()"
+                  moduleName = "RWRC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/f01320e/Downloads/Firebase_Real-Time_Chat_Materials/final/RWRC/Chat/ChatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "266"
+                  endingLineNumber = "266"
+                  offsetFromSymbolStart = "548">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7DFB024A-B7B1-4FA5-858D-4C118A1C0947"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RWRC/Chat/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
+            landmarkName = "insertNewMessage(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7DFB024A-B7B1-4FA5-858D-4C118A1C0947 - ed7cb36c13f0630a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RWRC.ChatViewController.insertNewMessage(RWRC.Message) -&gt; ()"
+                  moduleName = "RWRC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/f01320e/Downloads/Firebase_Real-Time_Chat_Materials/final/RWRC/Chat/ChatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "242"
+                  endingLineNumber = "242"
+                  offsetFromSymbolStart = "360">
+               </Location>
+               <Location
+                  uuid = "7DFB024A-B7B1-4FA5-858D-4C118A1C0947 - ed7cb36c13f0632b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RWRC.ChatViewController.insertNewMessage(RWRC.Message) -&gt; ()"
+                  moduleName = "RWRC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/f01320e/Downloads/Firebase_Real-Time_Chat_Materials/final/RWRC/Chat/ChatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "241"
+                  endingLineNumber = "241"
+                  offsetFromSymbolStart = "240">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5F4F0F7E-FA9E-4B1F-AE20-42424A33B5AE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RWRC/AppSettings.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "displayName"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "5F4F0F7E-FA9E-4B1F-AE20-42424A33B5AE - b0a17f84c52a6836"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static RWRC.AppSettings.displayName.getter : Swift.String"
+                  moduleName = "RWRC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/f01320e/Downloads/Firebase_Real-Time_Chat_Materials/final/RWRC/AppSettings.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "452">
+               </Location>
+               <Location
+                  uuid = "5F4F0F7E-FA9E-4B1F-AE20-42424A33B5AE - b0a17f84c52a6836"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static RWRC.AppSettings.displayName.getter : Swift.String"
+                  moduleName = "RWRC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/f01320e/Downloads/Firebase_Real-Time_Chat_Materials/final/RWRC/AppSettings.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
