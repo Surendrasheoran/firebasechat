@@ -46,25 +46,44 @@ final class ChannelsViewController: UITableViewController {
   private var currentChannelAlertController: UIAlertController?
 
   var counter = 0
+  var dateCounter = 1
   private let database = Firestore.firestore()
   private var channelReference: CollectionReference {
     return database.collection("channels")
   }
+  
+  private var lastOnlineReference: CollectionReference {
+    let doc = "\(Date.now.toStringUserFriendlyOnlyDate())"
+    return database.collection(doc)
+  }
+  
+  private var yesterdayLastOnlineReference: CollectionReference {
+    let doc = "\(Date.now.adding(day: -dateCounter).toStringUserFriendlyOnlyDate())"
+    return database.collection(doc)
+  }
+
 
   private var channels: [Channel] = []
+  private var lastOnline: [LastOnline] = []
   private var channelListener: ListenerRegistration?
+  private var lastSeenListener: ListenerRegistration?
+  private var yesterdayLastSeenListener: ListenerRegistration?
 
+  private var showChannels = true
+  
   private let currentUser: User
 
   deinit {
     channelListener?.remove()
+    lastSeenListener?.remove()
+    yesterdayLastSeenListener?.remove()
   }
 
   init(currentUser: User) {
     self.currentUser = currentUser
     super.init(style: .grouped)
 
-    title = "Welcome"
+    title = "Welcome CNHi"
   }
 
   required init?(coder aDecoder: NSCoder) {
@@ -74,26 +93,60 @@ final class ChannelsViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    let setting = FirestoreSettings()
-    setting.isPersistenceEnabled = false
-    database.clearPersistence()
-
-    database.settings = setting
     clearsSelectionOnViewWillAppear = true
+  //  AppController.shared.window.isHidden = false
+
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: channelCellIdentifier)
 
+    let notificationCenter = NotificationCenter.default
+       notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+    
+    
     toolbarItems = [
       UIBarButtonItem(title: "--", style: .plain, target: self, action: #selector(signOut)),
       UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
       UIBarButtonItem(title: ".", style: .plain, target: self, action: #selector(hideData)),
       UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
    //   UIBarButtonItem(customView: toolbarLabel),
+      UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(showLastOnline)),
+
       UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
       UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonPressed))
     ]
+    
+    
     if(!AppSettings.displayName.isEmpty){
       toolbarLabel.text = AppSettings.displayName
     }
+    
+    //yesterdayLastOnlineReference.order(by: "time", descending:true)
+
+    DispatchQueue.global(qos: .userInteractive).async {
+
+      self.lastSeenListener = self.lastOnlineReference.addSnapshotListener { [weak self] querySnapshot, error in
+        guard let self = self else { return }
+        guard let snapshot = querySnapshot else {
+          print("Error listening for channel updates: \(error?.localizedDescription ?? "No error")")
+          
+          loadYesterday()
+          
+          return
+        }
+        
+        snapshot.documentChanges.forEach { change in
+          self.handleLastOnlineDocumentChange(change)
+        }
+        
+        if(snapshot.documentChanges.count == 0)
+        {
+          let fakeOnline = LastOnline(name: "--- \(Date.now.toReadableString())  \(Date.now.toStringUserFriendlyOnlyDate())", time: Date.now)
+          lastOnline.append(fakeOnline)
+          
+          loadYesterday()
+        }
+      }
+    }
+    
     channelListener = channelReference.addSnapshotListener { [weak self] querySnapshot, error in
       guard let self = self else { return }
       guard let snapshot = querySnapshot else {
@@ -106,17 +159,67 @@ final class ChannelsViewController: UITableViewController {
       }
     }
   }
+  
+  func loadYesterday()
+  {
+    yesterdayLastSeenListener = yesterdayLastOnlineReference.addSnapshotListener { [weak self] querySnapshot, error in
+      guard let self = self else { return }
+      guard let snapshot = querySnapshot else {
+        print("Error listening for channel updates: \(error?.localizedDescription ?? "No error")")
+        return
+      }
+
+      snapshot.documentChanges.forEach { change in
+        self.handleLastOnlineDocumentChange(change)
+      }
+      
+      if(snapshot.documentChanges.count == 0)
+      {
+      
+        let fakeOnline = LastOnline(name: "--- \(Date.now.adding(day: -dateCounter).toReadableString())  \(Date.now.adding(day: -dateCounter).toStringUserFriendlyOnlyDate())", time: Date.now.adding(day: -dateCounter))
+        lastOnline.append(fakeOnline)
+        lastOnline =  lastOnline.sorted(by: { $0.time.compare($1.time) == .orderedDescending })
+        lastOnline = lastOnline.sorted(by: {$0.time > $1.time})
+
+        dateCounter+=1
+        DispatchQueue.main.async {
+          // Update the UI on the main thread
+          self.tableView.reloadData()
+        }
+        loadYesterday()
+      }
+    }
+  }
+  
+  @objc func appMovedToBackground() {
+      // do whatever event you want
+    AppController.shared.show(in: AppController.shared.window)
+  }
+  
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+//    if(AppController.shared.loadChat == false){
+//      AppController.shared.window.isHidden = true
+//      navigationController?.isToolbarHidden = true
+//      navigationController?.popToRootViewController(animated: true)
+//    }
+  }
+  
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     navigationController?.isToolbarHidden = false
     tableView.isHidden = true
+    AppController.shared.loadChat = true
     counter = 0
   }
-
-  override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(animated)
-    navigationController?.isToolbarHidden = true
+  
+  @objc private func showLastOnline() {
+    showChannels = !showChannels
+    tableView.isHidden = showChannels
+    tableView.reloadData()
   }
 
   // MARK: - Actions
@@ -141,6 +244,7 @@ final class ChannelsViewController: UITableViewController {
     do {
       database.clearPersistence()
       Firestore.firestore(database: "channels").clearPersistence()
+      Firestore.firestore(database: "lastOnline_\(AppSettings.displayName)").clearPersistence()
 
       try Auth.auth().signOut()
     } catch {
@@ -150,7 +254,7 @@ final class ChannelsViewController: UITableViewController {
   }
   
   @objc private func hideData() {
-    if (counter > 5){
+    if (counter > 8){
       tableView.isHidden = !tableView.isHidden;
       counter = 0
     }
@@ -220,7 +324,12 @@ final class ChannelsViewController: UITableViewController {
     guard let index = channels.firstIndex(of: channel) else {
       return
     }
-    tableView.insertRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+    DispatchQueue.main.async {
+      // Update the UI on the main thread
+      
+    //  self.tableView.insertRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+      self.tableView.reloadData()
+    }
   }
 
   private func updateChannelInTable(_ channel: Channel) {
@@ -240,6 +349,47 @@ final class ChannelsViewController: UITableViewController {
     channels.remove(at: index)
     tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
   }
+  
+  
+  private func addLastSeenToTable(_ channel: LastOnline) {
+//    if lastOnline.contains(channel) {
+//      return
+//    }
+  
+    
+    lastOnline.removeAll { online in
+      online.name == channel.name
+    }
+    
+    
+    lastOnline.append(channel)
+    //self.lastOnline.sort(by: {$0.time > $1.time}) // this is it
+    lastOnline =  lastOnline.sorted(by: { $0.time.compare($1.time) == .orderedDescending })
+    lastOnline = lastOnline.sorted(by: {$0.time > $1.time})
+    DispatchQueue.main.async {
+      // Update the UI on the main thread
+      self.tableView.reloadData()
+    }
+  //  tableView.insertRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+  }
+
+  private func updateLastSeenInTable(_ channel: LastOnline) {
+    guard let index = lastOnline.firstIndex(of: channel) else {
+      return
+    }
+
+    lastOnline[index] = channel
+    tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+  }
+
+  private func removeLastSeenFromTable(_ channel: LastOnline) {
+    guard let index = lastOnline.firstIndex(of: channel) else {
+      return
+    }
+
+    lastOnline.remove(at: index)
+    tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+  }
 
   private func handleDocumentChange(_ change: DocumentChange) {
     guard let channel = Channel(document: change.document) else {
@@ -255,6 +405,26 @@ final class ChannelsViewController: UITableViewController {
       removeChannelFromTable(channel)
     }
   }
+  
+  private func handleLastOnlineDocumentChange(_ change: DocumentChange) {
+    guard let channel = LastOnline(document: change.document) else {
+      return
+    }
+
+    switch change.type {
+    case .added:
+      addLastSeenToTable(channel)
+    case .modified:
+      updateLastSeenInTable(channel)
+    case .removed:
+      removeLastSeenFromTable(channel)
+    }
+    
+    DispatchQueue.main.async {
+      // Update the UI on the main thread
+      self.tableView.reloadData()
+    }
+  }
 }
 
 // MARK: - TableViewDelegate
@@ -264,7 +434,7 @@ extension ChannelsViewController {
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return channels.count
+    return showChannels ? channels.count : lastOnline.count
   }
 
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -273,14 +443,32 @@ extension ChannelsViewController {
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: channelCellIdentifier, for: indexPath)
-    cell.accessoryType = .disclosureIndicator
-    cell.textLabel?.text = channels[indexPath.row].name
+      cell.accessoryType = showChannels ? .disclosureIndicator : .none
+    cell.textLabel?.text = showChannels ? channels[indexPath.row].name : "\(lastOnline[indexPath.row].name)"
     return cell
   }
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let channel = channels[indexPath.row]
-    let viewController = ChatViewController(user: currentUser, channel: channel)
-    navigationController?.pushViewController(viewController, animated: true)
+    if(showChannels){
+      let channel = channels[indexPath.row]
+      AppController.shared.loadChat = true
+      let viewController = ChatViewController(user: currentUser, channel: channel)
+      navigationController?.pushViewController(viewController, animated: true)
+    }
   }
+}
+
+
+extension Date {
+
+    func toString(withFormat format: String = "dd MMM yyyy 'at' h:mm a") -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        dateFormatter.dateFormat = format
+        dateFormatter.amSymbol = "AM"
+        dateFormatter.pmSymbol = "PM"
+      dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        let str = dateFormatter.string(from: self)
+        return str
+    }
 }

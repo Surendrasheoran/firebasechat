@@ -40,7 +40,7 @@ enum AppSettings {
     
       //var name = try UserDefaults.standard.string(forKey: displayNameKey)!
       
-      return UserDefaults.standard.string(forKey: displayNameKey)!
+      return UserDefaults.standard.string(forKey: displayNameKey) ?? "rahul"
     }
     set {
       UserDefaults.standard.set(newValue, forKey: displayNameKey)

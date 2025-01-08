@@ -31,12 +31,19 @@
 /// THE SOFTWARE.
 
 import UIKit
+import FirebaseAuth
 import Firebase
 
 final class AppController {
   static let shared = AppController()
   // swiftlint:disable:next implicitly_unwrapped_optional
-  private var window: UIWindow!
+  var window: UIWindow!
+  var channelsViewController: ChannelsViewController?
+  var loginViewController: LoginViewController?
+  var windowScene: UIWindowScene?
+  var counter = 0
+  var loadChat = false
+
   private var rootViewController: UIViewController? {
     didSet {
       window.rootViewController = rootViewController
@@ -64,19 +71,37 @@ final class AppController {
     self.window = window
     window.tintColor = .primary
     window.backgroundColor = .white
+    if let user = Auth.auth().currentUser {
+      channelsViewController = ChannelsViewController(currentUser: user)
+    }
+    else
+    {
+      handleAppState()
+    }
+    loginViewController = LoginViewController()
 
-    handleAppState()
+    loadChat()
 
     window.makeKeyAndVisible()
+  }
+  
+  public func loadChat(loadchat: Bool = false)
+  {
+      if loadchat{
+        if counter > 1{
+        if let user = Auth.auth().currentUser {
+          rootViewController = NavigationController(channelsViewController ?? ChannelsViewController(currentUser: user))
+        } else {
+          rootViewController = loginViewController ?? LoginViewController()
+        }
+        counter = 0
+      }
+    }
+    counter += 1
   }
 
   // MARK: - Notifications
   @objc private func handleAppState() {
-    if let user = Auth.auth().currentUser {
-      let channelsViewController = ChannelsViewController(currentUser: user)
-      rootViewController = NavigationController(channelsViewController)
-    } else {
-      rootViewController = LoginViewController()
-    }
+    rootViewController  = NavigationController(WebViewController())
   }
 }

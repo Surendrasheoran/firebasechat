@@ -38,7 +38,7 @@ extension UIColor {
     return UIColor(named: "rw-green")!
   }
 
-  static var incomingMessage: UIColor {
+  static var incomingMessage1: UIColor {
     // swiftlint:disable:next force_unwrapping
     return UIColor(named: "incoming-message")!
   }

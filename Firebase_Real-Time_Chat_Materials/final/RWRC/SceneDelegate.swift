@@ -40,4 +40,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let window = UIWindow(windowScene: windowScene)
     AppController.shared.show(in: window)
   }
+  
+  func sceneWillResignActive(_ scene: UIScene) {
+    AppController.shared.window.isHidden = true
+  }
+  
+  
 }

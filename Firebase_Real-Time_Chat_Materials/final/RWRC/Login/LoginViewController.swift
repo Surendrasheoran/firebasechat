@@ -109,6 +109,7 @@ final class LoginViewController: UIViewController {
       object: nil)
   }
   
+  // default for demo
   @objc private func signInDefault()
   {
     Auth.auth().signIn(withEmail: "rest@testing.com", password: "123456")
@@ -116,35 +117,22 @@ final class LoginViewController: UIViewController {
       print(error.debugDescription)
       print(result?.user.email)
       
-      AppSettings.displayName = String(result?.user.email?.split(separator: "@").first ?? "User 1")
+      AppSettings.displayName = String(result?.user.email?.split(separator: "@").first ?? "rest")
     //  self.showMissingNameAlert()
     }
   }
 
+  // default for rahul
   private func signIn() {
-    guard
-      let name = emailField.text?.lowercased(),
-      !name.isEmpty
-    else {
-        showMissingNameAlert()
-      return
-    }
-    
     emailField.resignFirstResponder()
 
-    AppSettings.displayName = name
+    AppSettings.displayName = "rahul"
     
-//    Auth.auth().signIn(withEmail: "rahul@testing.com", password: "123456")
-//    { (result, error) in
-//      print(error.debugDescription)
-//      print(result?.user.email)
-//      AppSettings.displayName = String(result?.user.email?.split(separator: "@").first ?? "User 1")
-//
-//    //  self.showMissingNameAlert()
-//    }
-    
-    Auth.auth().signInAnonymously { (result,error) in
+    Auth.auth().signIn(withEmail: emailField.text ?? "rahul@test.com", password: passwordField.text ?? "123456")
+    { (result, error) in
       print(error.debugDescription)
+      print(result?.user.email! as Any)
+      AppSettings.displayName = String(result?.user.email?.split(separator: "@").first ?? "rahul")
     }
   }
 
